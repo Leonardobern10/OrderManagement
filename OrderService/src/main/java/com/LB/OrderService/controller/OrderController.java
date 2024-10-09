@@ -1,6 +1,7 @@
 package com.LB.OrderService.controller;
 
 import com.LB.OrderService.model.Order;
+import com.google.gson.Gson;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,8 +22,10 @@ public class OrderController {
 
     @PostMapping
     public ResponseEntity<String> createOrder ( @RequestBody Order order ) {
-        rabbitTemplate.convertAndSend( exchange, "order.created", order.toString());
-        System.out.println(order.toString());
+        Gson gson = new Gson();
+        String orderString = gson.toJson(order);
+        rabbitTemplate.convertAndSend( exchange, "order.created", orderString);
+        System.out.println(orderString);
         return ResponseEntity.ok("Order placed successfully!");
     }
 }
