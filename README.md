@@ -136,7 +136,5 @@ Acesse o painel de gerenciamento do RabbitMQ em `http://localhost:15672` com as 
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
----
-
-**Contato**:  
+## **Contato** 
 Leonardo Bernardo - [leonardo.bernardo2658@gmail.com](mailto:leonardo.bernardo2658@gmail.com)
