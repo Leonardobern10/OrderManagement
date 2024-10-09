@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: InventoryService
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
+server:
+    port: 8082
+
